@@ -15,11 +15,17 @@ def gauss_elimination(Ab:Matrix) -> None:
 
         # row loop
         for i in range(p+1, len(Ab)):
+            print(f"p = {p}, i = {i} before")
+            pprint.pprint(Ab, width=40)
+
             multiplier = Ab[i][p] * one_over_minus_pivot
             
             # column loop
             for j in range(p, len(Ab[p])):
                 Ab[i][j] += multiplier * Ab[p][j]
+
+            print(f"p = {p}, i = {i} after")
+            pprint.pprint(Ab, width=40)
 
 
 def main():
